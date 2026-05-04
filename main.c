@@ -20,10 +20,10 @@ char str[] =
 
 void mainMenu()
 {
-	int n;
-	system("clear");
+	int n = -1;
 	while (1)
 	{
+		system("clear");
 		printf("\n\n%s\n\n", str);
 		printf("Welcome to hand-made Sokoban !\n");
 		printf("\n");
@@ -31,12 +31,19 @@ void mainMenu()
 		printf("Controls : \n<Q> Quit\n<R> Restart level\n<W> Move Up\n<S> Move Down\n<D> Move Right\n<A> Move Left\n\n");
 		printf("1 - Start\n");
 		printf("2 - Exit\n");
-		printf("Your Choice : ");
+		printf("Please enter <1-2> ");
 		scanf("%d", &n);
+		if (n == 1)
+			return ;
 		if (n == 2)
 			exit(0);
-		return ;
+		else
+		{
+			fprintf(stderr, "Please enter A valid option <1-2>!\n");
+			exit(2);
+		};
 	}
+	return ;
 }
 
 int main()
